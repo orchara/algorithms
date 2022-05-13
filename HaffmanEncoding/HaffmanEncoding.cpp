@@ -1,16 +1,11 @@
 #include <iostream>
+#include <map>
 
 
-//typedef struct node {
-//    std::string enc = "";
-//    struct node* chld0 = nullptr;
-//    struct node* chld1 = nullptr;
-//}node;
 
 typedef struct letter {
     char val = '\0';
     uint32_t rate = 0;
-    std::string enc = "";
     struct letter* chld0 = nullptr;
     struct letter* chld1 = nullptr;
 }letter;
@@ -31,7 +26,7 @@ typedef struct mylist {
     }
 }mylist;
 
-
+typedef std::map<char, std::string> enc_map;
 
 
 
@@ -103,7 +98,10 @@ void NodeFill(std::string str, mylist* nodes){
     //nodes->push_back({ str[0], 1 });
     for (uint32_t i = 0; i < strsize; ++i) {        
         if (!InNodes(str[i], nodes)) {
-            PushBack({ str[i], 1}, nodes);
+            letter l;
+            l.val = std::tolower(str[i]);
+            l.rate = 1;
+            PushBack(l, nodes);
         } 
     }
     return;
@@ -129,47 +127,60 @@ letter* P_PopMin(mylist *mlst) {
 }
 
 letter* TreeConstr(mylist nodes) {
+    letter* res = new letter;
+    if (nodes.size() == 1) {
+        *res = nodes.head->_letter;
+        return res;
+    }
     while (nodes.size() > 1) {
         letter newnode;
         newnode.chld0 = P_PopMin(&nodes);
         newnode.chld1 = P_PopMin(&nodes);
         newnode.rate = newnode.chld0->rate + newnode.chld1->rate;
         PushBack(newnode, &nodes);
-    }
-    letter* res = new letter;
+    }    
     *res = nodes.head->_letter;
     return res;
 }
 
-void EncLetter(letter* top, std::string enc, std::string app) {
+void EncLetter(letter* top, std::string enc, std::string app, enc_map* m) {
     enc.append(app);
     if (top->val != '\0') {
-        top->enc = enc;
-        std::cout << top->val << ": " << top->enc << std::endl;
-        //top->enc = enc;
+        (*m)[top->val] = enc;
+        //std::cout << top->val << ": " << enc << std::endl;        
         return;
     }
-    EncLetter(top->chld0, enc, "0");
-    EncLetter(top->chld1, enc, "1");
+    EncLetter(top->chld0, enc, "0", m);
+    EncLetter(top->chld1, enc, "1", m);
+}
+
+std::string Encoding(std::string str, enc_map m) {
+    std::string res = "";
+    for (size_t i = 0; i < str.length(); ++i) {
+        res.append(m[str[i]]);
+    }
+    return res;
 }
 
 int main()
 {
-    std::string str, hafstr;
+    enc_map e_map;
+    std::string str, hafstr = "";
     //std::cin >> str;
-    str = "abacabad";
-    hafstr = "";
+    str = "ffffffffff";
     mylist nodes;
     NodeFill(str, &nodes);
-    letter* tree = TreeConstr(nodes);
-    
-
-
-
-
-    
-    std::cout << nodes.size() << " " << tree->rate << std::endl;
-    EncLetter(tree, "", "");
+    if (nodes.size() == 1) {
+        e_map[str[0]] = "0";
+    }else{
+        letter* tree = TreeConstr(nodes);
+        EncLetter(tree, "", "", &e_map);
+    }
+    hafstr = Encoding(str, e_map);
+    std::cout << e_map.size() << " " << hafstr.size() << std::endl;
+    for (enc_map::iterator it = e_map.begin(); it != e_map.end(); ++it) {
+        std::cout << it->first << ": " << it->second << std::endl;
+    }
     //PrintList(nodes);
     std::cout << hafstr << std::endl;
 
