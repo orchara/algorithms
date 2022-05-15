@@ -31,7 +31,7 @@ void ShiftDown(std::vector<long long>* heap, size_t i) {
                 i = 2 * i + 1;
                 continue;
             }
-        } 
+        }
         if ((*heap)[i] < (*heap)[2 * i + 1]) {
             std::swap((*heap)[i], (*heap)[2 * i + 1]);
             i = 2 * i + 1;
@@ -65,13 +65,12 @@ long long ExtractMax(std::vector<long long>* heap) {
     return Remove(heap, 0);
 }
 
-int main()
-{
+int main() {
     std::vector<long long> heap;
     long long count, val;
     std::string str;
     std::cin >> count;
-    while (count > 0 ) {
+    while (count > 0) {
         std::cin >> str;
         if (str.compare("Insert") == 0) {
             std::cin >> val;
@@ -84,4 +83,3 @@ int main()
     }
     return 0;
 }
-
