@@ -1,7 +1,31 @@
 #include <iostream> 
 #include <vector> 
 #include <algorithm> 
-  
+
+int32_t get_pos(const std::vector<int32_t>& numbers, int number) {
+    int32_t l = 0, r = numbers.size() - 1, mid;
+    while (l <= r)
+    {
+        mid = (l+r)/2;
+        if (numbers[mid] == number) {
+            return mid + 1;
+        }
+        
+        	
+        
+        if (numbers[mid] > number) {
+            r = mid - 1;
+        } else {
+            l = mid + 1;
+        }
+    }
+    if(numbers[mid] > number){
+        	return mid;
+    }else{
+    	return mid + 1;
+    }
+}
+
 int32_t FindMid(std::vector<int32_t>& v, int32_t beg, int32_t end) { 
          int32_t ret, mid; 
          mid =  static_cast<int64_t>(beg + end)/2; 
@@ -58,7 +82,7 @@ int32_t FindMid(std::vector<int32_t>& v, int32_t beg, int32_t end) {
                  std::cin >> temp; 
                  dot.push_back(temp); 
          }*/ 
-         beg = { 1, 3, 7, 4, 2, 6 , 8, 9, 5 }; 
+         beg = { 1, 10, 7, 11, 2, 6 , 8, 9, 5 }; 
          for(auto v : beg){
          	std::cout << v << " ";
          }
@@ -67,5 +91,9 @@ int32_t FindMid(std::vector<int32_t>& v, int32_t beg, int32_t end) {
          for(auto v : beg){
          	std::cout << v << " ";
          }
+         std::cout << std::endl;
+         std::cout <<get_pos(beg, 3);
+         std::cout << std::endl;
+         std::cout <<get_pos(beg, 5);
   
  }
