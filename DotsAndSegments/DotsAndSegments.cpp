@@ -1,6 +1,7 @@
 #include <iostream> 
 #include <vector> 
 #include <algorithm> 
+#include <ios>
 
 int32_t get_pos(const std::vector<int32_t>& numbers, int number) {
     int32_t l = 0, r = numbers.size() - 1, mid;
@@ -49,7 +50,7 @@ int32_t FindMid(std::vector<int32_t>& v, int32_t beg, int32_t end) {
 	        return;
 	}
          int32_t mid = FindMid(v, beg, end), i = beg + 1, j = beg; 
-         std::cout << mid << " " << v[mid] << std::endl;
+         //std::cout << mid << " " << v[mid] << std::endl;
          std::swap(v[beg], v[mid]); 
          while (i <= end) { 
                  if (v[beg] >= v[i]) { 
@@ -67,9 +68,10 @@ int32_t FindMid(std::vector<int32_t>& v, int32_t beg, int32_t end) {
   
  int main() 
  { 
-         //int32_t n, m; 
-         std::vector<int32_t> beg, end, dot; 
-         /*std::cin >> n >> m; 
+ 		std::ios_base::sync_with_stdio(false);
+         int32_t n, m; 
+         std::vector<int32_t> beg, end; 
+         std::cin >> n >> m; 
          for (size_t i = 0; i < n; ++i) { 
                  int32_t temp; 
                  std::cin >> temp; 
@@ -77,12 +79,14 @@ int32_t FindMid(std::vector<int32_t>& v, int32_t beg, int32_t end) {
                  std::cin >> temp; 
                  end.push_back(temp); 
          } 
+         QuickSort(beg, 0, beg.size() - 1);
+         QuickSort(end, 0, beg.size() - 1);
          for (size_t i = 0; i < m; ++i) { 
                  int32_t temp; 
                  std::cin >> temp; 
-                 dot.push_back(temp); 
-         }*/ 
-         beg = { 1, 10, 7, 11, 2, 6 , 8, 9, 5 }; 
+                 std::cout << get_pos(beg, temp) - get_pos(end, temp) << " ";
+         }
+ }eg = { 1, 10, 7, 11, 2, 6 , 8, 9, 5 }; 
          for(auto v : beg){
          	std::cout << v << " ";
          }
@@ -94,6 +98,8 @@ int32_t FindMid(std::vector<int32_t>& v, int32_t beg, int32_t end) {
          std::cout << std::endl;
          std::cout <<get_pos(beg, 3);
          std::cout << std::endl;
-         std::cout <<get_pos(beg, 5);
+         std::cout <<get_pos(beg, 5)*/
+         
+         
   
  }
