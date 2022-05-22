@@ -3,17 +3,18 @@
 #include <algorithm> 
 #include <ios>
 
-int32_t get_pos(const std::vector<int32_t>& numbers, int number) {
-    int32_t l = 0, r = numbers.size() - 1, mid;
+int64_t get_pos(const std::vector<int64_t>& numbers, int number, bool flag) {
+    int64_t l = 0, r = numbers.size() - 1, mid = 0;
     while (l <= r)
     {
         mid = (l+r)/2;
         if (numbers[mid] == number) {
-            return mid;
+            if (flag) {
+                return mid + 1;
+            } else {
+                return mid;
+            }
         }
-        
-        	
-        
         if (numbers[mid] > number) {
             r = mid - 1;
         } else {
@@ -27,9 +28,9 @@ int32_t get_pos(const std::vector<int32_t>& numbers, int number) {
     }
 }
 
-int32_t FindMid(std::vector<int32_t>& v, int32_t beg, int32_t end) { 
-         int32_t ret, mid; 
-         mid =  static_cast<int64_t>(beg + end)/2; 
+int64_t FindMid(std::vector<int64_t>& v, int64_t beg, int64_t end) { 
+         int64_t ret, mid; 
+         mid =  (beg + end)/2;
          ret = std::min(std::min(std::max(v[beg], v[end]), std::max(v[beg], v[mid])), std::max(v[mid], v[end])); 
          if (ret == v[beg]) { 
          	return beg; 
@@ -45,11 +46,11 @@ int32_t FindMid(std::vector<int32_t>& v, int32_t beg, int32_t end) {
   
   
   
- void QuickSort(std::vector<int32_t>& v, int32_t beg, int32_t end) { 
+ void QuickSort(std::vector<int64_t>& v, int64_t beg, int64_t end) { 
 	if(end - beg < 1){
 	        return;
 	}
-         int32_t mid = FindMid(v, beg, end), i = beg + 1, j = beg, k = end +1; 
+         int64_t mid = FindMid(v, beg, end), i = beg + 1, j = beg, k = end +1; 
          //std::cout << mid << " " << v[mid] << std::endl;
          std::swap(v[beg], v[mid]); 
          while (i < k) { 
@@ -74,22 +75,22 @@ int32_t FindMid(std::vector<int32_t>& v, int32_t beg, int32_t end) {
  int main() 
  { 
  		std::ios_base::sync_with_stdio(false);
-         int32_t n, m; 
-         std::vector<int32_t> beg, end; 
+         int64_t n, m; 
+         std::vector<int64_t> beg, end; 
          std::cin >> n >> m; 
-         for (size_t i = 0; i < n; ++i) { 
-                 int32_t temp; 
-                 std::cin >> temp; 
-                 beg.push_back(temp); 
-                 std::cin >> temp; 
-                 end.push_back(temp); 
+         for (int64_t i = 0; i < n; ++i) {
+             int64_t temp;
+             std::cin >> temp; 
+             beg.push_back(temp); 
+             std::cin >> temp; 
+             end.push_back(temp);   
          } 
          QuickSort(beg, 0, beg.size() - 1);
          QuickSort(end, 0, beg.size() - 1);
-         for (size_t i = 0; i < m; ++i) { 
-                 int32_t temp; 
-                 std::cin >> temp; 
-                 std::cout << (get_pos(beg, temp) - 1) - (get_pos(end, temp) + 1) << " ";
+         for (int64_t i = 0; i < m; ++i) {
+             int64_t temp; 
+             std::cin >> temp; 
+             std::cout << get_pos(beg, temp, true) - get_pos(end, temp, false) << " ";
          }
  
  /*beg = { 1, 10, 7, 11, 2, 6 , 8, 9, 5 }; 
