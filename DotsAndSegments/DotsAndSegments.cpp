@@ -9,7 +9,7 @@ int32_t get_pos(const std::vector<int32_t>& numbers, int number) {
     {
         mid = (l+r)/2;
         if (numbers[mid] == number) {
-            return mid + 1;
+            return mid;
         }
         
         	
@@ -49,19 +49,24 @@ int32_t FindMid(std::vector<int32_t>& v, int32_t beg, int32_t end) {
 	if(end - beg < 1){
 	        return;
 	}
-         int32_t mid = FindMid(v, beg, end), i = beg + 1, j = beg; 
+         int32_t mid = FindMid(v, beg, end), i = beg + 1, j = beg, k = end +1; 
          //std::cout << mid << " " << v[mid] << std::endl;
          std::swap(v[beg], v[mid]); 
-         while (i <= end) { 
-                 if (v[beg] >= v[i]) { 
+         while (i < k) { 
+                 if (v[beg] > v[i]) { 
                          j++; 
                          std::swap(v[j], v[i]); 
-                 } 
-                 i++; 
+                         i++;
+                 }else if (v[beg] < v[i]){
+                 	k--;
+                 	std::swap(v[k], v[i]);
+                 }  else if(v[beg] == v[i]){
+                 	i++;
+                 }
          } 
          std::swap(v[beg], v[j]); 
          QuickSort(v, beg, j -1);
-         QuickSort(v, j + 1, end);
+         QuickSort(v, k, end);
   
          return; 
  } 
@@ -84,9 +89,10 @@ int32_t FindMid(std::vector<int32_t>& v, int32_t beg, int32_t end) {
          for (size_t i = 0; i < m; ++i) { 
                  int32_t temp; 
                  std::cin >> temp; 
-                 std::cout << get_pos(beg, temp) - get_pos(end, temp) << " ";
+                 std::cout << (get_pos(beg, temp) - 1) - (get_pos(end, temp) + 1) << " ";
          }
- }eg = { 1, 10, 7, 11, 2, 6 , 8, 9, 5 }; 
+ 
+ /*beg = { 1, 10, 7, 11, 2, 6 , 8, 9, 5 }; 
          for(auto v : beg){
          	std::cout << v << " ";
          }
