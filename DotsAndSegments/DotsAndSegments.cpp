@@ -10,8 +10,22 @@ int64_t get_pos(const std::vector<int64_t>& numbers, int number, bool flag) {
         mid = (l+r)/2;
         if (numbers[mid] == number) {
             if (flag) {
+                while (mid+1 < numbers.size()) {
+                    if (numbers[mid+1] == number) {
+                        mid++;
+                    } else {
+                        break;
+                    }
+                }
                 return mid + 1;
             } else {
+                while (mid-1 >= 0) {
+                    if (numbers[mid-1] == number) {
+                        mid--;
+                    } else {
+                        break;
+                    }
+                }
                 return mid;
             }
         }
