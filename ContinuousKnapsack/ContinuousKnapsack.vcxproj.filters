@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DotsAndSegments.cpp">
+    <ClCompile Include="ContinuousKnapsack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

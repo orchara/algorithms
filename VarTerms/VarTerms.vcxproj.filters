@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Greedy algorithm.cpp">
+    <ClCompile Include="VarTerms.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

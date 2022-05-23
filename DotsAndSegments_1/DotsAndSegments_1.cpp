@@ -11,7 +11,7 @@ std::vector <int> get_covering_set(std::vector <Segment> segments)
     auto Comp = [](Segment s1, Segment s2) {
         return s1.second < s2.second ? true : false;
     };
-    std::sort(segments.begin(), segments.end(),Comp);
+    std::sort(segments.begin(), segments.end(), Comp);
     int temp;
     // fix this function
     for (auto s : segments)
@@ -19,8 +19,7 @@ std::vector <int> get_covering_set(std::vector <Segment> segments)
         if (result.size() == 0)
         {
             result.push_back(s.second);
-        }
-        else
+        } else
         {
             if (*(result.end() - 1) <= s.second && *(result.end() - 1) >= s.first)
             {

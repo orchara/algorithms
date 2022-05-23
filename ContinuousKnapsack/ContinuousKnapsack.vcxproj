@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{faa6113f-6af1-4350-90b5-a4320698dd86}</ProjectGuid>
-    <RootNamespace>Greedyalgorithm</RootNamespace>
+    <ProjectGuid>{cf2cc07c-d999-49b5-9d29-f2fa1c08aa59}</ProjectGuid>
+    <RootNamespace>ContinuousKnapsack</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Greedy algorithm.cpp" />
+    <ClCompile Include="ContinuousKnapsack.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
