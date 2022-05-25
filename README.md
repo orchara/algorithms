@@ -14,3 +14,4 @@
 - [двоичный поиск](https://github.com/orchara/algorithms/tree/master/BinSearch)
 - [число инверсий](https://github.com/orchara/algorithms/tree/master/FindInverse)
 - [точки и отрезки(быстрая сортировка)](https://github.com/orchara/algorithms/tree/master/DotsAndSegments_2)
+- [сортировка подсчётом](https://github.com/orchara/algorithms/tree/master/CountingSort)
