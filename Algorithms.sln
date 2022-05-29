@@ -25,6 +25,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CountingSort", "CountingSor
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LongestSubsequence", "LongestSubsequence\LongestSubsequence.vcxproj", "{53915A05-560D-45A5-B2AE-9F00338C1607}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LongestSubsequence - 2", "LongestSubsequence - 2\LongestSubsequence - 2.vcxproj", "{8F659897-5455-42CF-9538-4B7C4CB829B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -121,6 +123,14 @@ Global
 		{53915A05-560D-45A5-B2AE-9F00338C1607}.Release|x64.Build.0 = Release|x64
 		{53915A05-560D-45A5-B2AE-9F00338C1607}.Release|x86.ActiveCfg = Release|Win32
 		{53915A05-560D-45A5-B2AE-9F00338C1607}.Release|x86.Build.0 = Release|Win32
+		{8F659897-5455-42CF-9538-4B7C4CB829B1}.Debug|x64.ActiveCfg = Debug|x64
+		{8F659897-5455-42CF-9538-4B7C4CB829B1}.Debug|x64.Build.0 = Debug|x64
+		{8F659897-5455-42CF-9538-4B7C4CB829B1}.Debug|x86.ActiveCfg = Debug|Win32
+		{8F659897-5455-42CF-9538-4B7C4CB829B1}.Debug|x86.Build.0 = Debug|Win32
+		{8F659897-5455-42CF-9538-4B7C4CB829B1}.Release|x64.ActiveCfg = Release|x64
+		{8F659897-5455-42CF-9538-4B7C4CB829B1}.Release|x64.Build.0 = Release|x64
+		{8F659897-5455-42CF-9538-4B7C4CB829B1}.Release|x86.ActiveCfg = Release|Win32
+		{8F659897-5455-42CF-9538-4B7C4CB829B1}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
