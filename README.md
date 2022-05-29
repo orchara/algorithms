@@ -15,3 +15,5 @@
 - [число инверсий](https://github.com/orchara/algorithms/tree/master/FindInverse)
 - [точки и отрезки(быстрая сортировка)](https://github.com/orchara/algorithms/tree/master/DotsAndSegments_2)
 - [сортировка подсчётом](https://github.com/orchara/algorithms/tree/master/CountingSort)
+- [наибольшая последовательнократная подпоследовательность](https://github.com/orchara/algorithms/tree/master/LongestSubsequence)
+- [наибольшая невозрастающая подпоследовательность](https://github.com/orchara/algorithms/tree/master/LongestSubsequence%20-%202)
