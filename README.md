@@ -17,3 +17,5 @@
 - [сортировка подсчётом](https://github.com/orchara/algorithms/tree/master/CountingSort)
 - [наибольшая последовательнократная подпоследовательность](https://github.com/orchara/algorithms/tree/master/LongestSubsequence)
 - [наибольшая невозрастающая подпоследовательность](https://github.com/orchara/algorithms/tree/master/LongestSubsequence%20-%202)
+- [расстояние редактирования](https://github.com/orchara/algorithms/tree/master/EditingDistance)
+- [рюкзак](https://github.com/orchara/algorithms/tree/master/EditingDistance)
