@@ -1,7 +1,7 @@
 # Алгоритмы: теория и практика. Методы
 Набор задач решаемых в рамках курса ["Алгоритмы: теория и практика. Методы"](https://stepik.org/course/217/info)  
 каждая папка содержит файл "task.txt" с условием задачи и файл "*.cpp" с решением, прошедшим все тесты.  
-репозиторий обновляется по мере решения задач.  
+ 
 
 ## Список решеных задач:  
 
@@ -20,3 +20,4 @@
 - [расстояние редактирования](https://github.com/orchara/algorithms/tree/master/EditingDistance)
 - [рюкзак](https://github.com/orchara/algorithms/tree/master/Knapsack_2)
 - [калькулятор](https://github.com/orchara/algorithms/tree/master/BrokenCalc)
+- [лестница](https://github.com/orchara/algorithms/tree/master/SumOfSteps)
