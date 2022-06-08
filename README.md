@@ -20,3 +20,4 @@
 - [расстояние редактирования](https://github.com/orchara/algorithms/tree/master/EditingDistance)
 - [рюкзак](https://github.com/orchara/algorithms/tree/master/Knapsack_2)
 - [калькулятор](https://github.com/orchara/algorithms/tree/master/BrokenCalc)
+- [лестница](https://github.com/orchara/algorithms/tree/master/SumOfSteps)
